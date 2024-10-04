@@ -1,0 +1,50 @@
+project:
+  title: "asce-quarto"
+  output-dir: _output
+bibliography: ./assets/references.bib
+csl: ./assets/american-society-of-civil-engineers.csl
+link-citations: true
+format:
+  pdf:
+    crossref:
+      fig-prefix: Fig.
+      fig-title: "**Fig.**"
+      tbl-prefix: Table
+      tbl-title: "**Table**"
+      eq-prefix: Eq.
+      sec-prefix: Section
+      title-delim: "." 
+    documentclass: ./assets/ascelike-new
+    # available class options include: Proceedings, NewProceedings
+    # Journal, BackFigs, InsideFigs, SingleSpace, DoubleSpace, 
+    # 10pt, 11pt, 11pt, NoPageNumbers, SectionNumbers, 
+    # NoLineNumbers, LineNumbers
+    classoption: [NewProceedings, letterpaper]
+    pdf-engine: pdflatex
+    indent: true
+    keep-tex: true
+    header-includes:
+      - \usepackage[labelfont=bf,labelsep=period]{caption}
+      - \usepackage{newtxtext,newtxmath}
+  html:
+    theme: cosmo
+    comments:
+      hypothesis: true
+  docx:
+    crossref:
+      fig-prefix: Figure
+      fig-title: "**Figure**"
+      tbl-prefix: Table
+      tbl-title: "**Table**"
+      eq-prefix: Eq.
+      sec-prefix: Section
+      title-delim: "." 
+    filters:
+      - ./assets/scholarly-metadata.lua
+      - ./assets/author-info-blocks.lua
+    reference-doc: ./assets/asce-template.docx
+execute:
+  echo: false
+  warning: false
+
+
